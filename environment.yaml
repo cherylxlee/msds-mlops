@@ -1,7 +1,9 @@
+name: mlops
 channels:
   - conda-forge
   - defaults
 dependencies:
+  - python=3.12
   - pip
   - numpy=1.26.4
   - pandas=2.2.2

@@ -1,7 +1,7 @@
 schema: '2.0'
 stages:
   prepare:
-    cmd: python src/create_features.py
+    cmd: python src/create_features_w_params.py
     deps:
     - path: data/adult.data
       hash: md5
@@ -11,10 +11,15 @@ stages:
       hash: md5
       md5: 366c746021dc50ad9d933d2817612fc9
       size: 2003132
-    - path: src/create_features.py
+    - path: src/create_features_w_params.py
       hash: md5
-      md5: b93aea27ba45f8b24bdd52928f1f2b99
-      size: 2564
+      md5: 4c599dcbee8be853eef6b98ec6607292
+      size: 3469
+    params:
+      params.yaml:
+        features.chi2percentile: 50
+        features.test_path: data/adult.test
+        features.train_path: data/adult.data
     outs:
     - path: data/pipeline.pkl
       hash: md5

@@ -33,3 +33,36 @@ stages:
       hash: md5
       md5: adf63b6ce20f7ee74f63d5dabb325226
       size: 10829967
+  preprocess:
+    cmd: python src/preprocessing.py
+    deps:
+    - path: data/creditcard.csv
+      hash: md5
+      md5: e90efcb83d69faf99fcab8b0255024de
+      size: 150828752
+    - path: src/preprocessing.py
+      hash: md5
+      md5: a4067e4fd6a0d5fc2646a88efa5d8770
+      size: 3045
+    params:
+      params.yaml:
+        preprocessing.random_state: 42
+        preprocessing.test_size: 0.2
+        preprocessing.val_size: 0.25
+    outs:
+    - path: data/processed_test.csv
+      hash: md5
+      md5: ffd3011596e2930a395a5183ec052fa0
+      size: 31632746
+    - path: data/processed_train.csv
+      hash: md5
+      md5: 24a724ac5779255e436569490b87a9c3
+      size: 94901089
+    - path: data/processed_val.csv
+      hash: md5
+      md5: 0e6baad6296cc8ae6fc8ac43477cc8ae
+      size: 31633507
+    - path: data/scaler.pkl
+      hash: md5
+      md5: 29ebad46b060346711d4fca16c868b72
+      size: 566

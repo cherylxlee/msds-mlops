@@ -3,3 +3,4 @@
 /adult.test
 /*.csv
 /pipeline.pkl
+/scaler.pkl

@@ -1,4 +1,9 @@
-features:  
-    chi2percentile: 50
-    train_path: data/adult.data  
-    test_path: data/adult.test
+preprocessing:
+  test_size: 0.2
+  val_size: 0.25
+  random_state: 42
+  input_file: data/creditcard.csv
+  scaler_output: data/scaler.pkl
+  train_output: data/processed_train.csv
+  val_output: data/processed_val.csv
+  test_output: data/processed_test.csv

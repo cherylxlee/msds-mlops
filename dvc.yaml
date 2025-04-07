@@ -1,15 +1,15 @@
 stages:
-  prepare:
-    cmd: python src/create_features_w_params.py
+  preprocess:
+    cmd: python src/preprocessing.py
     deps:
-      - data/adult.data
-      - data/adult.test
-      - src/create_features_w_params.py
+      - data/creditcard.csv
+      - src/preprocessing.py
     params:
-      - features.chi2percentile
-      - features.train_path
-      - features.test_path
+      - preprocessing.test_size
+      - preprocessing.val_size
+      - preprocessing.random_state
     outs:
-      - data/pipeline.pkl
-      - data/processed_train_data.csv
-      - data/processed_test_data.csv
+      - data/scaler.pkl
+      - data/processed_train.csv
+      - data/processed_val.csv
+      - data/processed_test.csv

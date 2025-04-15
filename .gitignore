@@ -9,3 +9,5 @@ images/
 
 __pycache__/
 *.py[cod]
+.ipynb_checkpoints/
+demo/

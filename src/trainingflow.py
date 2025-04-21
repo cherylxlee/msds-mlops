@@ -157,4 +157,4 @@ class CreditCardFraudTrainingFlow(FlowSpec):
 if __name__ == '__main__':
     CreditCardFraudTrainingFlow()
 
-# python src/trainingflow.py run --trees 100 --depth 10 --seed 42 --features 15
+# python trainingflow.py run --trees 100 --depth 10 --seed 42 --features 15

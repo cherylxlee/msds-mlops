@@ -27,8 +27,14 @@ class CreditCardFraudScoringFlowGCP(FlowSpec):
         if not isinstance(self.transaction_data, dict) and not isinstance(self.transaction_data, list):
             raise ValueError("Transaction data must be a dictionary or list of features")
             
-        # get the latest training flow run to access metadata
-        self.train_flow = Flow('CreditCardFraudTrainingFlowGCP').latest_run
+        # get only successful training flow run to access metadata
+        for run in Flow('CreditCardFraudTrainingFlowGCP'):
+            if run.successful:
+                self.train_flow = run
+                print(f"Using successful model from run: {self.train_flow.pathspec}")
+                break
+        else:
+            raise ValueError("No successful training flow runs found")
         print(f"Using model from run: {self.train_flow.pathspec}")
         
         # get selected features from training flow

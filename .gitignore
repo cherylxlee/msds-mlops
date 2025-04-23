@@ -12,3 +12,7 @@ __pycache__/
 *.py[cod]
 .ipynb_checkpoints/
 demo/
+
+sa-private-key.json
+
+metaflow-tools/
